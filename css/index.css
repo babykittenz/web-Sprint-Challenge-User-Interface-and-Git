@@ -1,3 +1,6 @@
+
+/* CSS Reset Section */
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -18,19 +21,18 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
+
 ol, ul {
 	list-style: none;
 }
@@ -49,6 +51,34 @@ table {
 
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;  
+}
+
+/* Color Palette */
+
+:root{
+    --black: black;
+    --white: white;
+    --whitesmoke: whitesmoke;
+    --box-one: teal;
+    --box-two: gold;
+    --box-three: cadetblue;
+    --box-four: coral;
+    --box-five: crimson;
+    --box-six: forestgreen;
+    --box-seven: darkorchid;
+    --box-eight: hotpink;
+    --box-nine: indigo;
+    --box-ten: dodgerblue;
+    --p-font: #4f4f4f;
+}
+
+/* General Styles */
+
+html{
+    font-size: 62.5%; /* 10px = 1 rem*/
 }
 
 html, body {
@@ -57,37 +87,233 @@ html, body {
 }
 
 h1, h2, h3, h4, h5 {
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
     font-family: 'Rubik', sans-serif;
 }
 
 p {
     line-height: 1.4;
+    font-size: 1.6rem;
+    color: var(--p-font);
 }
 
+/* Helper Class Styles */
+
 .container {
-    width: 800px;
+    max-width: 80rem;
+    width:auto;
     margin: 0 auto;
 }
+
+/* Animations */
+
+button:hover{
+    background-color:var(--black);
+    color:var(--white);  /* Button Animation */
+    transition: .2s
+}
+
+.box-one:hover {                             /* Start of 1-10 Box Animations */
+    animation: pulseone 1s  infinite;      
+  }
+  
+  @keyframes pulseone {
+    0% {
+      background-color: var(--box-ten);
+    }
+    100% {
+      background-color: var(--box-one);
+    }
+  }
+
+  .box-two:hover {
+    animation: pulsetwo 1s  infinite;
+  }
+  
+  @keyframes pulsetwo {
+    0% {
+      background-color: var(--box-one);
+    }
+    100% {
+      background-color: var(--box-two);
+    }
+  }
+
+  .box-three:hover {
+    animation: pulsethree 1s  infinite;
+  }
+  
+  @keyframes pulsethree {
+    0% {
+      background-color: var(--box-two);
+    }
+    100% {
+      background-color: var(--box-three)
+    }
+  }
+
+  .box-four:hover {
+    animation: pulsefour 1s  infinite;
+  }
+  
+  @keyframes pulsefour {
+    0% {
+      background-color: var(--box-three);
+    }
+    100% {
+      background-color: var(--box-four);
+    }
+  }
+
+  .box-five:hover {
+    animation: pulsefive 1s  infinite;
+  }
+  
+  @keyframes pulsefive {
+    0% {
+      background-color: var(--box-four);
+    }
+    100% {
+      background-color: var(--box-five);
+    }
+  }
+
+  .box-six:hover {
+    animation: pulsesix 1s  infinite;
+  }
+  
+  @keyframes pulsesix {
+    0% {
+      background-color: var(--box-five);
+    }
+    100% {
+      background-color: var(--box-six);
+    }
+  }
+
+  .box-seven:hover {
+    animation: pulseseven 1s  infinite;
+  }
+  
+  @keyframes pulseseven {
+    0% {
+      background-color: var(--box-six);
+    }
+    100% {
+      background-color: var(--box-seven);
+    }
+  }
+
+  .box-eight:hover {
+    animation: pulseeight 1s  infinite;
+  }
+  
+  @keyframes pulseeight {
+    0% {
+      background-color: var(--box-seven);
+    }
+    100% {
+      background-color: var(--box-eight);
+    }
+  }
+
+  .box-nine:hover {
+    animation: pulsenine 1s  infinite;
+  }
+  
+  @keyframes pulsenine {
+    0% {
+      background-color: var(--box-eight);
+    }
+    100% {
+      background-color: var(--box-nine);
+    }
+  }
+
+  .box-ten:hover {
+    animation: pulseten 1s  infinite;
+  }
+  
+  @keyframes pulseten {
+    0% {
+      background-color: var(--box-nine);
+    }
+    100% {
+      background-color: var(--box-ten);  
+    }
+  }                                          /* End of 1-10 Box Animations */
+
+.header-container a:hover{
+    color: var(--black);
+    text-shadow: .1rem .1rem var(--black);
+    transition: 0.5s;
+}
+
+
+footer a:hover{
+    color: var(--whitesmoke);
+    text-shadow: .1rem .1rem var(--white);
+    transition: 0.5s;
+}
+
+/* Headers Section */
+
+nav{
+    display:flex;
+    justify-content:unset;
+    align-items: center;
+    text-align: center;
+}
+
+.header-container{ 
+    max-width: 80rem;
+    width:auto;
+    margin: 0 auto;
+    max-height: 10vh;
+    height: auto;
+}
+
+.logo{
+    width:auto;
+    height: 10vh;
+    margin-top: 3rem;
+}
+
+.links{
+    width:90%;
+    display:flex;
+    justify-content: space-evenly;
+    
+}
+.links a{
+    text-decoration: none;
+    color: var(--p-font);
+    font-size: 1.5rem; 
+}
+
+/* Top Section */
 
 .top-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-bottom: 20px;
-    border-bottom: 1px dashed black;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-bottom: .1rem dashed var(--black);
 }
 
 .top-content .text-container {
     width: 48%;
     padding: 0 1%;
-    padding-bottom: 20px;  
+    padding-bottom: 2rem;  
 }
 
+/* Middle Section */
+
 .middle-content {
-    margin-bottom: 20px;
-    border-bottom: 1px dashed black;
+    margin-bottom: 2rem;
+    border-bottom: .1rem dashed var(--black);
 }
 
 .middle-content h2 {
@@ -103,18 +329,116 @@ p {
 
 .middle-content .boxes .box {
     width: 12.5%;
-    height: 100px;
-    background: black;
-    margin: 20px 2.5%;
-    color: white;
+    height: 10rem;
+    margin: 2rem 2.5%;
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.options-container{
+    padding:0rem 2rem;
+    max-width: 80rem;
+    width:auto;
+    margin: 0 auto;
+}
+
+.box{
+    font-size: 1.6rem;
+  
+}
+
+.box-one{
+    background-color: var(--box-one);
+}
+
+.box-two{
+    background-color: var(--box-two);
+}
+
+.box-three{
+    background-color: var(--box-three);
+}
+
+.box-four{
+    background-color: var(--box-four);
+}
+
+.box-five{
+    background-color: var(--box-five);
+}
+
+.box-six{
+    background-color: var(--box-six);
+}
+
+.box-seven{
+    background-color: var(--box-seven);
+}
+
+.box-eight{
+    background-color: var(--box-eight);
+}
+
+.box-nine{
+    background-color: var(--box-nine);
+}
+
+.box-ten{
+    background-color: var(--box-ten);
+}
+
+.about-container{
+    display:flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    max-width: 80rem;
+    width:auto;
+    margin:0 auto;
+    border-bottom: .1rem var(--black) dashed;
+}
+
+#about-options{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.about-box-container{
+    display:flex;
+    flex-direction: column;
+    width: 48%;
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: .1rem var(--black) dashed;
+    align-items: flex-start; 
+}
+
+.about-box-container h2, .about-box-container p{
+    margin: 1rem 0;
+}
+
+.about-box-container img{
+    margin-top: 1rem;
+}
+
+.about-box-container button{
+    margin-top: 1rem;
+}
+
+button{
+    background-color: var(--white);
+    border:.2rem var(--black) solid;
+    padding:.7rem 2rem;
+    border-radius: 1rem;  
+}
+
+/* Bottom Section */
+
 .bottom-content {
     display: flex;
-    margin: 0 2% 20px;
+    margin: 0 2% 2rem;
     justify-content: space-around;
 }
 
@@ -126,9 +450,27 @@ p {
     padding-right: 0;
 }
 
+.work-container{
+    display:flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    max-width: 80rem;
+    width:auto;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:0;
+    margin-bottom: 2rem;  
+}
+
+/* Footer Section */
+
 footer {
+    display: flex;
+    max-width: 80rem;
+    width: auto;
+    margin: 0 auto;
     width: 100%;
-    background: black;
+    background: var(--black);
 }
 
 footer nav {
@@ -136,11 +478,11 @@ footer nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 2%;
-    font-size: 14px;
+    padding: 2rem 2%;
+    font-size: 1.6rem;
 }
 
 footer nav a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
 }
